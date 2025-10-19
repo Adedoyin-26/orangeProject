@@ -1,0 +1,15 @@
+{
+  "name": "orangeproject",
+  "version": "1.0.0",
+  "description": "Cypress automation project implementing the Page Object Model (POM) to test key user workflows on the OrangeHRM web application — including login, profile update, and logout functionalities.",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^15.5.0"
+  }
+}
