@@ -4,6 +4,8 @@ class Login{
     textPassword = "input[name='password']";
     btnLogin = "button[type='submit']";
     imgLogo = "img[alt='client brand banner']";
+    alert=".oxd-alert-content.oxd-alert-content--error";
+    blankAlert=".oxd-text.oxd-text--span.oxd-input-field-error-message.oxd-input-group__message";
 
 enterUsername(username){
     cy.get(this.textUsername).type(username);
@@ -19,8 +21,16 @@ clickLogin(){
 
 verifyLogin(expectedTitle){
     cy.get(this.imgLogo).should('exist', expectedTitle);
+} 
+
+verifyLoginNegative(errorAlert){
+    cy.get(this.alert).should('contain.text', 'Invalid credentials');
+
 }
 
+verifyEmptyLogin(errorAlert){
+    cy.get(this.blankAlert).should('contain.text', 'Required');
+}
 }
 
 export default Login;

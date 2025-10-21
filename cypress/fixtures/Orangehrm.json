@@ -1,5 +1,12 @@
 {
   "username": "Admin",
   "password": "admin123",
-  "expectedTitle": "OrangeHRM"
+  "expectedTitle": "OrangeHRM",
+  "name": "Ibrahim",
+  "expectedHeader" : "Personal Details",
+  "expectedHeader1" : "Address",
+  "expectedHeader2" : "Records Found",
+  "expectedHeader3" : "Attachments",
+  "expectedHeader4" : "Records",
+  "expectedHeader5" : "Add"
 }
