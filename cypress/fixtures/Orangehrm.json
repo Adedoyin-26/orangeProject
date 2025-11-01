@@ -3,10 +3,73 @@
   "password": "admin123",
   "expectedTitle": "OrangeHRM",
   "name": "Ibrahim",
-  "expectedHeader" : "Personal Details",
-  "expectedHeader1" : "Address",
-  "expectedHeader2" : "Records Found",
-  "expectedHeader3" : "Attachments",
-  "expectedHeader4" : "Records",
-  "expectedHeader5" : "Add"
+  "expectedHeader": "Personal Details",
+  "expectedHeader1": "Address",
+  "expectedHeader2": "Records Found",
+  "expectedHeader3": "Attachments",
+  "expectedHeader4": "Records",
+  "expectedHeader5": "Add",
+
+  "personalDetails": {
+    "firstName": "John",
+    "middleName": "Michael",
+    "lastName": "Doe",
+    "employeeId": "EMP12345",
+    "otherId": "OTH98765",
+    "driverLicense": "DL123456789",
+    "licenseExpiryDate": "2026-12-31",
+    "nationality": "American",
+    "maritalStatus": "Single",
+    "dateOfBirth": "1990-05-15",
+    "gender": "Male"
+  },
+
+  "contactDetails": {
+    "street1": "123 Main Street",
+    "street2": "Apartment 4B",
+    "city": "New York",
+    "stateProvince": "New York",
+    "zipPostalCode": "10001",
+    "country": "United States",
+    "homeTelephone": "+1-212-555-0100",
+    "mobile": "+1-917-555-0200",
+    "workTelephone": "+1-212-555-0300",
+    "workEmail": "john.doe@orangehrm.com",
+    "otherEmail": "johndoe@gmail.com"
+  },
+
+  "emergencyContact": {
+    "name": "Jane Doe",
+    "relationship": "Spouse",
+    "homeTelephone": "+1-212-555-0400",
+    "mobile": "+1-917-555-0500",
+    "workTelephone": "+1-212-555-0600"
+  },
+
+  "dependent": {
+    "name": "Emily Doe",
+    "relationship": "Child",
+    "dateOfBirth": "2015-08-20"
+  },
+
+  "immigration": {
+    "documentType": "Passport",
+    "number": "P123456789",
+    "issuedDate": "2020-01-15",
+    "expiryDate": "2030-01-15",
+    "eligibleStatus": "Eligible",
+    "country": "United States",
+    "issuedBy": "US Department of State",
+    "reviewDate": "2025-01-15",
+    "comments": "Valid passport for international travel"
+  },
+
+  "membership": {
+    "membership": "ACCA",
+    "subscriptionPaidBy": "Company",
+    "subscriptionAmount": "500",
+    "currency": "USD",
+    "subscriptionCommenceDate": "2024-01-01",
+    "subscriptionRenewalDate": "2025-01-01"
+  }
 }
