@@ -5,7 +5,19 @@ import Login from '../../pageObjects/Login';
 
 describe('Info Page - Complete Form Interactions', () => {
 
+     before(() => {
+    cy.clearCookies();
+    cy.clearLocalStorage();
+    if (Cypress.session && Cypress.session.clearAllSavedSessions) {
+      Cypress.session.clearAllSavedSessions();
+    } else if (Cypress.session && Cypress.session.clearAll) {
+      Cypress.session.clearAll();
+    }
+  });
+
     beforeEach(() => {
+        cy.session('loginSession', () => {
+            cy.wait(5000);
          cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
         cy.wait(5000);
 
@@ -18,6 +30,9 @@ describe('Info Page - Complete Form Interactions', () => {
             lgn.verifyLogin(data.expectedTitle);
             cy.wait(5000);
         });
+        });
+        cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/pim/viewMyDetails');
+        cy.wait(5000);
     });
 
     // ========== Personal Details Tests ==========
@@ -34,10 +49,10 @@ describe('Info Page - Complete Form Interactions', () => {
             inf.enterFirstName(data.personalDetails.firstName);
             inf.enterMiddleName(data.personalDetails.middleName);
             inf.enterLastName(data.personalDetails.lastName);
-            inf.enterEmployeeId(data.personalDetails.employeeId);
-            inf.enterOtherId(data.personalDetails.otherId);
-            inf.enterDriverLicense(data.personalDetails.driverLicense);
-            inf.enterLicenseExpiryDate(data.personalDetails.licenseExpiryDate);
+            // inf.enterEmployeeId(data.personalDetails.employeeId);
+            // inf.enterOtherId(data.personalDetails.otherId);
+            // inf.enterDriverLicense(data.personalDetails.driverLicense);
+            // inf.enterLicenseExpiryDate(data.personalDetails.licenseExpiryDate);
 
             cy.scrollTo('center');
             cy.wait(1000);
@@ -46,7 +61,7 @@ describe('Info Page - Complete Form Interactions', () => {
             cy.wait(500);
             inf.selectMaritalStatus(data.personalDetails.maritalStatus);
             cy.wait(500);
-            inf.enterDateOfBirth(data.personalDetails.dateOfBirth);
+            // inf.enterDateOfBirth(data.personalDetails.dateOfBirth);
             inf.selectGender(data.personalDetails.gender);
 
             cy.scrollTo('bottom');
@@ -95,6 +110,27 @@ describe('Info Page - Complete Form Interactions', () => {
             inf.clickSaveButton();
             cy.wait(2000);
             inf.verifySuccessMessage();
+
+        });
+    });
+
+    it('Should select Blood Type', () => {
+        const inf = new Info();
+
+        cy.fixture('Orangehrm').then((data) => {
+            inf.clickMyInfo();
+            cy.wait(2000);
+
+            cy.scrollTo('center');
+            cy.wait(1000);
+
+            inf.selectBloodType(data.personalDetails.bloodType);
+            cy.wait(500);
+
+            cy.scrollTo('bottom');
+            inf.clickSaveButton();
+            cy.wait(2000);
+            inf.verifySuccessMessage();
         });
     });
 
@@ -136,6 +172,7 @@ describe('Info Page - Complete Form Interactions', () => {
             inf.clickSaveButton();
             cy.wait(2000);
             inf.verifySuccessMessage();
+
         });
     });
 

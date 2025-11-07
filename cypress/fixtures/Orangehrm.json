@@ -11,45 +11,42 @@
   "expectedHeader5": "Add",
 
   "personalDetails": {
-    "firstName": "John",
-    "middleName": "Michael",
-    "lastName": "Doe",
-    "employeeId": "EMP12345",
-    "otherId": "OTH98765",
-    "driverLicense": "DL123456789",
-    "licenseExpiryDate": "2026-12-31",
-    "nationality": "American",
+    "firstName": "Ibra",
+    "middleName": "Heem",
+    "lastName": "Ade",
+    "nationality": "Nigerian",
     "maritalStatus": "Single",
     "dateOfBirth": "1990-05-15",
-    "gender": "Male"
+    "gender": "Male",
+    "bloodType": "O+"
   },
 
   "contactDetails": {
-    "street1": "123 Main Street",
-    "street2": "Apartment 4B",
-    "city": "New York",
-    "stateProvince": "New York",
+    "street1": "Kola Adeyeye",
+    "street2": "Ketu",
+    "city": "Lagos",
+    "stateProvince": "Lagos State",
     "zipPostalCode": "10001",
-    "country": "United States",
-    "homeTelephone": "+1-212-555-0100",
-    "mobile": "+1-917-555-0200",
-    "workTelephone": "+1-212-555-0300",
-    "workEmail": "john.doe@orangehrm.com",
-    "otherEmail": "johndoe@gmail.com"
+    "country": "Nigeria",
+    "homeTelephone": "08109999991",
+    "mobile": "08151111119",
+    "workTelephone": "08122222222",
+    "workEmail": "lee@mailinator.com",
+    "otherEmail": "dee@mailinator.com"
   },
 
   "emergencyContact": {
-    "name": "Jane Doe",
-    "relationship": "Spouse",
-    "homeTelephone": "+1-212-555-0400",
-    "mobile": "+1-917-555-0500",
-    "workTelephone": "+1-212-555-0600"
+    "name": "Jerry Dim",
+    "relationship": "Sibling",
+    "homeTelephone": "08099999999",
+    "mobile": "08000000000",
+    "workTelephone": "08100000001"
   },
 
   "dependent": {
-    "name": "Emily Doe",
-    "relationship": "Child",
-    "dateOfBirth": "2015-08-20"
+    "name": "Ade Leye",
+    "relationship": "Sibling",
+    "dateOfBirth": "2010-08-20"
   },
 
   "immigration": {

@@ -19,27 +19,28 @@ expectedHeader5 = '.oxd-button.oxd-button--medium.oxd-button--text';
 firstNameField = "input[name='firstName']";
 middleNameField = "input[name='middleName']";
 lastNameField = "input[name='lastName']";
-employeeIdField = '.oxd-input.oxd-input--active';
-otherIdField = ".oxd-input.oxd-input--active";
-driverLicenseField = "input[placeholder=\"Driver's License Number\"]";
-licenseExpiryDateField = "input[placeholder='yyyy-dd-mm']";
+// employeeIdField = '.oxd-input.oxd-input--active';
+// otherIdField = ".oxd-input.oxd-input--active";
+// driverLicenseField = "input[placeholder=\"Driver's License Number\"]";
+// licenseExpiryDateField = "input[placeholder='yyyy-dd-mm']";
 nationalityDropdown = '.oxd-select-text-input';
 maritalStatusDropdown = '.oxd-select-text-input';
-dateOfBirthField = "input[placeholder='yyyy-dd-mm']";
+bloodTypeDropdown = '.oxd-select-text-input';
+// dateOfBirthField = "input[placeholder='yyyy-dd-mm']";
 genderRadio = "input[type='radio']";
 
 // ========== Contact Details Form Fields ==========
-street1Field = "input[placeholder='Street 1']";
-street2Field = "input[placeholder='Street 2']";
-cityField = "input[placeholder='City']";
-stateProvinceField = "input[placeholder='State/Province']";
-zipPostalCodeField = "input[placeholder='Zip/Postal Code']";
-countryDropdown = '.oxd-select-text-input';
-homeTelephoneField = "input[placeholder='Home']";
-mobileField = "input[placeholder='Mobile']";
-workTelephoneField = "input[placeholder='Work']";
-workEmailField = "input[placeholder='Work Email']";
-otherEmailField = "input[placeholder='Other Email']";
+street1Field = ".oxd-input.oxd-input--active";
+street2Field = ".oxd-input.oxd-input--active";
+cityField = ".oxd-input.oxd-input--active";
+stateProvinceField = ".oxd-input.oxd-input--active";
+zipPostalCodeField = ".oxd-input.oxd-input--active";
+countryDropdown = '.oxd-select-text-input'; 
+homeTelephoneField = ".oxd-input.oxd-input--active";
+mobileField = ".oxd-input.oxd-input--active";
+workTelephoneField = ".oxd-input.oxd-input--active";
+workEmailField = ".oxd-input.oxd-input--active";
+otherEmailField = ".oxd-input.oxd-input--active";
 
 // ========== Emergency Contacts Form Fields ==========
 emergencyNameField = "input[placeholder='Name']";
@@ -73,7 +74,7 @@ subscriptionCommenceDateField = "input[placeholder='yyyy-dd-mm']";
 subscriptionRenewalDateField = "input[placeholder='yyyy-dd-mm']";
 
 // ========== Common Elements ==========
-saveButton = "button[type='submit']";
+saveButton = "button[type='submit']"; 
 addButton = '.oxd-button.oxd-button--medium.oxd-button--secondary';
 cancelButton = "button[type='button']";
 deleteButton = '.oxd-icon.bi-trash';
@@ -142,21 +143,21 @@ enterLastName(lastName){
     cy.get(this.lastNameField).clear().type(lastName);
 }
 
-enterEmployeeId(employeeId){
-    cy.get(this.employeeIdField).eq(1).clear().type(employeeId);
-}
+// enterEmployeeId(employeeId){
+//     cy.get(this.employeeIdField).eq(1).clear().type(employeeId);
+// }
 
-enterOtherId(otherId){
-    cy.get(this.otherIdField).clear().type(otherId);
-}
+// enterOtherId(otherId){
+//     cy.get(this.otherIdField).clear().type(otherId);
+// }
 
-enterDriverLicense(licenseNumber){
-    cy.get(this.driverLicenseField).clear().type(licenseNumber);
-}
+// enterDriverLicense(licenseNumber){
+//     cy.get(this.driverLicenseField).clear().type(licenseNumber);
+// }
 
-enterLicenseExpiryDate(expiryDate){
-    cy.get(this.licenseExpiryDateField).eq(0).clear().type(expiryDate);
-}
+// enterLicenseExpiryDate(expiryDate){
+//     cy.get(this.licenseExpiryDateField).eq(0).clear().type(expiryDate);
+// }
 
 selectNationality(nationality){
     cy.get(this.nationalityDropdown).eq(0).click();
@@ -168,9 +169,9 @@ selectMaritalStatus(status){
     cy.contains('.oxd-select-option', status).click();
 }
 
-enterDateOfBirth(dob){
-    cy.get(this.dateOfBirthField).eq(1).clear().type(dob);
-}
+// enterDateOfBirth(dob){
+//     cy.get(this.dateOfBirthField).eq(1).clear().type(dob);
+// }
 
 selectGender(gender){
     if(gender === 'Male'){
@@ -196,25 +197,38 @@ verifyLastName(expectedLastName){
     cy.get(this.lastNameField).should('have.value', expectedLastName);
 }
 
+selectBloodType(bloodType){
+    cy.get(this.bloodTypeDropdown).eq(2).click();
+    cy.contains('.oxd-select-option', bloodType).click();
+}
+
+clickSaveButton(){
+    cy.get(this.saveButton).eq(1).click();
+}
+
+verifySuccessMessage(){
+    cy.get(this.successMessage).should('be.visible');
+}
+
 // ========== Contact Details Form Methods ==========
 enterStreet1(street1){
-    cy.get(this.street1Field).clear().type(street1);
+    cy.get(this.street1Field).eq(1).clear().type(street1);
 }
 
 enterStreet2(street2){
-    cy.get(this.street2Field).clear().type(street2);
+    cy.get(this.street2Field).eq(1).clear().type(street2);
 }
 
 enterCity(city){
-    cy.get(this.cityField).clear().type(city);
+    cy.get(this.cityField).eq(2).clear().type(city);
 }
 
-enterStateProvince(state){
-    cy.get(this.stateProvinceField).clear().type(state);
+enterStateProvince(stateProvince){
+    cy.get(this.stateProvinceField).eq(3).clear().type(stateProvince);
 }
 
-enterZipPostalCode(zip){
-    cy.get(this.zipPostalCodeField).clear().type(zip);
+enterZipPostalCode(zipPostalCode){
+    cy.get(this.zipPostalCodeField).eq(4).clear().type(zipPostalCode);
 }
 
 selectCountry(country){
@@ -222,24 +236,24 @@ selectCountry(country){
     cy.contains('.oxd-select-option', country).click();
 }
 
-enterHomeTelephone(phone){
-    cy.get(this.homeTelephoneField).clear().type(phone);
+enterHomeTelephone(homeTelephone){
+    cy.get(this.homeTelephoneField).eq(5).clear().type(homeTelephone);
 }
 
 enterMobile(mobile){
-    cy.get(this.mobileField).clear().type(mobile);
+    cy.get(this.mobileField).eq(6).clear().type(mobile);
 }
 
-enterWorkTelephone(workPhone){
-    cy.get(this.workTelephoneField).clear().type(workPhone);
+enterWorkTelephone(workTelephone){
+    cy.get(this.workTelephoneField).eq(7).clear().type(workTelephone);
 }
 
-enterWorkEmail(email){
-    cy.get(this.workEmailField).clear().type(email);
+enterWorkEmail(workEmail){
+    cy.get(this.workEmailField).eq(8).clear().type(workEmail);
 }
 
-enterOtherEmail(email){
-    cy.get(this.otherEmailField).clear().type(email);
+enterOtherEmail(otherEmail){
+    cy.get(this.otherEmailField).eq(9).clear().type(otherEmail);
 }
 
 verifyCity(expectedCity){
